@@ -20,6 +20,12 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
     return "Grade is too low";
 }
 
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
+{
+    ;
+}
+
+
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
 {
     if (this == &other)
