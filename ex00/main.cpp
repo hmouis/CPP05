@@ -18,15 +18,36 @@ int main()
     {
         std::cerr << e.what() << std::endl;
     }
-    
+ 
     try
     {
-        Bureaucrat d("Valid", 10);
+        Bureaucrat a("bob", 123);
+        std::cout << a << "\n";
     }
     catch (std::exception & e)
     {
         std::cerr << e.what() << std::endl;
     }
+    try
+    {
+        Bureaucrat a("foo", 2);
+        a.increment();
+        a.increment();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     
-
+    try
+    {
+        Bureaucrat a("foo", 149);
+        a.decrement();
+        a.decrement();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }
