@@ -2,7 +2,7 @@ Name= Bureaucrat
 
 CC= c++ 
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3
-src= main.cpp Bureaucrat.cpp Form.cpp
+src= main.cpp Bureaucrat.cpp
 obj= $(src:.cpp=.o) 
  
 all: $(Name)

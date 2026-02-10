@@ -1,7 +1,6 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
-Bureaucrat::Bureaucrat(): name(""), grade(100)
+Bureaucrat::Bureaucrat(): name("Bureaucrat"), grade(100)
 {}
 
 Bureaucrat::Bureaucrat(const std::string& name, const int& grade):name(name), grade(grade) 
@@ -73,14 +72,6 @@ void Bureaucrat::setName(const std::string& name){
 }
 void Bureaucrat::setGrade(const int& grade){
     this->grade = grade;
-}
-
-void Bureaucrat::signForm(Form& form)
-{
-    if (grade < form.getGradeToSign())
-        std::cout << name << " couldn't sign " << form.getName() << " because ";
-    form.beSigned(*this);
-    std::cout << name << " signed " << form.getName() << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){}
