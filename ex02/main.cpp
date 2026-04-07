@@ -1,53 +1,36 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
+
+
 
 int main()
 {
-    try
+    Bureaucrat bob("Bob", 26);
+    ShrubberyCreationForm shrubbery("home");
+    RobotomyRequestForm   robotomy("Bender");
+    RobotomyRequestForm   robotom("Bende");
+    RobotomyRequestForm   roboto("Bend");
+    PresidentialPardonForm pardon("Arthur");
+
+    try 
     {
-        Bureaucrat b("too low", 160);
+        bob.signForm(robotomy);
+        bob.signForm(shrubbery);
+        bob.signForm(pardon);
     }
-    catch (std::exception & e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    try
-    {
-        Bureaucrat d("too high", 0);
-    }
-    catch (std::exception & e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
- 
-    try
-    {
-        Bureaucrat a("bob", 123);
-        std::cout << a << "\n";
-    }
-    catch (std::exception & e)
+    catch (std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
-    try
-    {
-        Bureaucrat a("foo", 2);
-        a.increment();
-        a.increment();
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-    try
-    {
-        Bureaucrat a("foo", 149);
-        a.decrement();
-        a.decrement();
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
+
+    bob.executeForm(shrubbery);
+    bob.executeForm(robotomy);
+    bob.executeForm(pardon);
+
+
+    return 0;
 }

@@ -2,6 +2,8 @@
 #define Bureaucrat_hpp
 
 #include <iostream>
+#include "AForm.hpp"
+
 
 class Bureaucrat
 {
@@ -19,6 +21,9 @@ class Bureaucrat
         void setName(const std::string& name);
         int getGrade() const;
         void setGrade(const int& grade);
+
+        void executeForm(AForm const & form) const;
+
         class GradeTooHighException : public std::exception 
         {
             public:
@@ -31,6 +36,8 @@ class Bureaucrat
         };
         void increment();
         void decrement();
+        void signForm(AForm& form);
+
 };
 
 std::ostream& operator<<(std::ostream& cout, const Bureaucrat& obj);

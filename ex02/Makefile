@@ -1,8 +1,8 @@
-Name= Bureaucrat
+Name= AForm
 
 CC= c++ 
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3
-src= main.cpp Bureaucrat.cpp
+src= main.cpp Bureaucrat.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp AForm.cpp RobotomyRequestForm.cpp
 obj= $(src:.cpp=.o) 
  
 all: $(Name)
