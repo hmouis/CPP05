@@ -31,7 +31,9 @@ int main()
     try
     {
         Bureaucrat a("foo", 2);
+        std::cout << a << "\n";
         a.increment();
+        std::cout << a << "\n";
         a.increment();
     }
     catch(const std::exception& e)
@@ -42,7 +44,9 @@ int main()
     try
     {
         Bureaucrat a("foo", 149);
+        std::cout << a << "\n";
         a.decrement();
+        std::cout << a << "\n";
         a.decrement();
     }
     catch(const std::exception& e)
