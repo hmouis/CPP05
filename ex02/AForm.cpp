@@ -42,13 +42,18 @@ const char* AForm::GradeTooLowException::what() const throw()
 void AForm::CheckExecution(Bureaucrat const& executor) const
 {
     if (!sign)
-        throw AForm::GradeTooLowException();
+        throw GradeTooLowException();
     if (executor.getGrade() > gradeToExec)  
-        throw AForm::FormSignException();
+        throw FormSignException();
 }
 
 AForm::AForm(int _gradeToSign, int _gradeToExec, std::string name):  name(name), sign(false), gradeToSign(_gradeToSign), gradeToExec(_gradeToExec)
-{}
+{
+    if (gradeToSign < 1 || gradeToExec < 1)
+        throw GradeTooHighException();
+    if (gradeToSign > 150 || gradeToExec > 150)
+        throw GradeTooLowException();
+}
 
 void AForm::beSigned(Bureaucrat& toSign)
 {
