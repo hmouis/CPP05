@@ -16,6 +16,7 @@ class Form
         Form();
         Form(const  Form& other);
         Form& operator=(const  Form& other);
+        Form(std::string name, int gradeToSign, int gradeToExec);
         ~Form();
         
         int getGradeToSign();

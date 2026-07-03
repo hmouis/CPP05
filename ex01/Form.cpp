@@ -16,6 +16,14 @@ Form& Form::operator=(const Form& other)
     return *this;
 }
 
+Form::Form(std::string name, int gradeToSign, int gradeToExec): name(name), sign(false), gradeToSign(gradeToSign), gradeToExec(gradeToExec)
+{
+    if (gradeToSign < 1 || gradeToExec < 1)
+        throw GradeTooHighException();
+    if (gradeToSign > 150 || gradeToExec > 150)
+        throw GradeTooLowException();
+}
+
 Form::~Form()
 {}
 
