@@ -1,4 +1,4 @@
-Name= AForm
+Name= Intern
 
 CC= c++ 
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3
